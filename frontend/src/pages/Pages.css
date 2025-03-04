@@ -1,0 +1,742 @@
+.page-container {
+  max-width: 1400px; /* Increased from 1200px */
+  margin: 0 auto;
+  padding: 20px 24px;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  width: 95%; /* Added to ensure it takes up most of the screen width */
+}
+
+.page-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.page-container p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* White Container */
+.white-container {
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Profiles Header */
+.profiles-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-profile-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(118, 255, 156, 0.2);
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #76ff9c;
+  min-width: 200px;
+}
+
+.create-profile-button::before {
+  content: '+';
+  margin-right: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.create-profile-button:hover {
+  background-color: rgba(118, 255, 156, 0.2);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25), 0 0 10px rgba(118, 255, 156, 0.3);
+}
+
+/* Search Container */
+.search-container {
+  width: 100%;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.search-container form {
+  display: flex;
+  width: 100%;
+}
+
+.search-input {
+  flex: 1;
+  padding: 14px 20px 14px 50px; /* Extra padding for the search icon */
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  color: #333;
+  font-weight: 500;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  background-size: 20px;
+}
+
+.search-input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 4px 15px rgba(118, 255, 156, 0.25), 0 0 0 2px rgba(118, 255, 156, 0.1);
+}
+
+.search-button {
+  background-color: #76ff9c;
+  color: #000;
+  border: none;
+  padding: 0 24px;
+  margin-left: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(118, 255, 156, 0.2);
+}
+
+.search-button:hover {
+  background-color: #65ee8b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(118, 255, 156, 0.3);
+}
+
+.search-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(118, 255, 156, 0.2);
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 30px;
+  align-self: flex-start;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 4px;
+  position: relative;
+}
+
+.filters::before {
+  content: 'Filter by:';
+  position: absolute;
+  top: -25px;
+  left: 4px;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.filter-button {
+  background-color: transparent;
+  color: #555;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.filter-button:hover {
+  color: #000;
+}
+
+.filter-button.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.filter-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 20%;
+  width: 60%;
+  height: 3px;
+  background-color: #76ff9c;
+  border-radius: 2px;
+}
+
+/* Profiles List */
+.profiles-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow-y: auto;
+  padding-right: 10px;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 24px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: calc(25% - 15px);
+  flex: 0 0 calc(25% - 15px); /* Fixed width, no growing or shrinking */
+  border: 1px solid rgba(118, 255, 156, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  min-width: 240px;
+  margin-bottom: 10px;
+}
+
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #76ff9c;
+  opacity: 0.8;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: rgba(118, 255, 156, 0.4);
+}
+
+.profile-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  border: 2px solid #76ff9c;
+  box-shadow: 0 4px 10px rgba(118, 255, 156, 0.3);
+}
+
+/* Online/offline indicators removed */
+
+.profile-info {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.profile-info h3 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.earnings {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0 auto 4px;
+  font-weight: 600;
+  flex: 1;
+  text-align: center;
+}
+
+.chats-received {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0 auto 4px;
+  font-weight: 600;
+  flex: 1;
+  text-align: center;
+}
+
+.growth {
+  font-size: 0.85rem;
+  color: #4caf50;
+  margin: 0 auto;
+  font-weight: 500;
+  flex: 1;
+  text-align: center;
+}
+
+.profile-actions {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000;
+  background-color: rgba(118, 255, 156, 0.2);
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px dashed #76ff9c;
+}
+
+.chat-button {
+  color: #000;
+  background: linear-gradient(145deg, #76ff9c, #5aff89);
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.chat-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.chat-button:hover {
+  background: linear-gradient(145deg, #5aff89, #76ff9c);
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15), -6px -6px 15px rgba(255, 255, 255, 0.9);
+}
+
+.chat-button:hover::before {
+  left: 100%;
+}
+
+.chat-button:active {
+  transform: translateY(1px);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.chat-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: linear-gradient(145deg, #e0e0e0, #f0f0f0);
+  border: none;
+  color: #999;
+  transform: none;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.05), -3px -3px 7px rgba(255, 255, 255, 0.7);
+  text-shadow: none;
+}
+
+.chat-button:disabled:hover {
+  transform: none;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.05), -3px -3px 7px rgba(255, 255, 255, 0.7);
+}
+
+.chat-button:disabled::before {
+  display: none;
+}
+
+.no-profiles {
+  text-align: center;
+  padding: 40px 0;
+  color: #888;
+}
+
+/* Loading and Error Styles */
+.loading-container,
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: 100%;
+}
+
+.loading {
+  font-size: 1.1rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.loading::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border: 2px solid #76ff9c;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: #e53935;
+  background-color: rgba(229, 57, 53, 0.1);
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #e53935;
+  font-size: 0.95rem;
+}
+
+/* Scrollbar styling */
+.profiles-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.profiles-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.profiles-grid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.profiles-grid::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Contact Form Styles */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Create Profile Page */
+.create-profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.profile-form {
+  margin-top: 20px;
+}
+
+.avatar-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.avatar-option {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.avatar-option:hover {
+  transform: scale(1.1);
+  background-color: #e0e0e0;
+}
+
+.avatar-option.selected {
+  background-color: #4caf50;
+  color: white;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #4caf50;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-button {
+  background-color: #f5f5f5;
+  color: #555;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: #e9e9e9;
+}
+
+/* Chat Modal Styles */
+.chat-modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.chat-header {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.chat-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.chat-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #76ff9c;
+  box-shadow: 0 2px 5px rgba(118, 255, 156, 0.3);
+}
+
+.chat-profile-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message-placeholder {
+  color: #999;
+  text-align: center;
+  font-style: italic;
+  margin: auto;
+}
+
+.chat-message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.chat-message {
+  padding: 10px 15px;
+  border-radius: 18px;
+  max-width: 80%;
+  word-break: break-word;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: rgba(118, 255, 156, 0.2);
+  border: 1px solid rgba(118, 255, 156, 0.4);
+  color: #000;
+}
+
+.profile-message {
+  align-self: flex-start;
+  background-color: #fff;
+  border: 1px solid #eee;
+  color: #333;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: #76ff9c;
+  box-shadow: 0 0 0 2px rgba(118, 255, 156, 0.2);
+}
+
+.chat-send-button {
+  background-color: rgba(118, 255, 156, 0.2);
+  color: #000;
+  border: 2px solid #76ff9c;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chat-send-button:hover {
+  background-color: rgba(118, 255, 156, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .profile-card {
+    width: calc(33.33% - 15px);
+    flex: 0 0 calc(33.33% - 15px);
+  }
+}
+
+@media (max-width: 992px) {
+  .profile-card {
+    width: calc(50% - 15px);
+    flex: 0 0 calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .profiles-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .profile-card {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  
+  .profile-avatar {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .profile-actions {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .create-profile-container {
+    padding: 20px;
+  }
+  
+  .avatar-options {
+    justify-content: center;
+  }
+}

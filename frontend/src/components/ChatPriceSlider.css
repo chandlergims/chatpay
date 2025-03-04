@@ -1,0 +1,34 @@
+.chat-price-slider {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.price-display {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.price-value {
+  color: #76ff9c;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Override rc-slider styles */
+.rc-slider-handle:hover {
+  border-color: #76ff9c !important;
+  box-shadow: 0 0 0 3px rgba(118, 255, 156, 0.3) !important;
+}
+
+.rc-slider-handle:active {
+  border-color: #76ff9c !important;
+  box-shadow: 0 0 0 4px rgba(118, 255, 156, 0.4) !important;
+}

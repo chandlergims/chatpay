@@ -1,0 +1,130 @@
+.login-form {
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.error-message {
+  background-color: rgba(255, 0, 0, 0.08);
+  color: #d32f2f;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(211, 47, 47, 0.2);
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.05);
+}
+
+.form-group {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(118, 255, 156, 0.3);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.form-group input:focus {
+  border-color: #76ff9c;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(118, 255, 156, 0.15);
+  background-color: white;
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.cancel-button {
+  background: linear-gradient(145deg, #f0f0f0, #e6e6e6);
+  color: #444;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.cancel-button:hover {
+  background: linear-gradient(145deg, #e6e6e6, #f0f0f0);
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 12px #d1d1d1, -6px -6px 12px #ffffff;
+}
+
+.cancel-button:active {
+  background: linear-gradient(145deg, #e6e6e6, #f0f0f0);
+  transform: translateY(1px);
+  box-shadow: inset 2px 2px 5px #d1d1d1, inset -2px -2px 5px #ffffff;
+}
+
+.submit-button {
+  background: linear-gradient(145deg, #76ff9c, #5aff89);
+  color: #000;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.5px;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.submit-button:hover {
+  background: linear-gradient(145deg, #5aff89, #76ff9c);
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15), -6px -6px 15px rgba(255, 255, 255, 0.9);
+}
+
+.submit-button:hover::before {
+  left: 100%;
+}
+
+.submit-button:active {
+  transform: translateY(1px);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+}

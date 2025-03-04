@@ -1,0 +1,266 @@
+/* Mailbox Container */
+.mailbox-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 180px);
+  width: 90%; /* Increase width from default */
+  max-width: 1200px; /* Set a maximum width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Inbox Header */
+.inbox-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+}
+
+.inbox-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.inbox-tab {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inbox-tab:hover {
+  background-color: #eee;
+}
+
+.inbox-tab.active {
+  background-color: rgba(118, 255, 156, 0.2);
+  color: #000;
+  font-weight: 600;
+  border: 2px solid #76ff9c;
+}
+
+/* Messages List */
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.message-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.message-item:hover {
+  background-color: #f9f9f9;
+}
+
+.message-item.unread {
+  background-color: rgba(118, 255, 156, 0.05);
+}
+
+.message-item.unread .message-from,
+.message-item.unread .message-subject {
+  font-weight: 700;
+}
+
+.message-checkbox {
+  margin-right: 15px;
+}
+
+.message-star {
+  margin-right: 15px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.message-star.starred {
+  color: #ffca28;
+}
+
+.message-content-preview {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* For text truncation */
+}
+
+.message-from {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.message-subject-line {
+  display: flex;
+  align-items: center;
+}
+
+.message-subject {
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+
+.message-preview {
+  font-size: 0.85rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 600px; /* Increased from 300px */
+  flex-grow: 1; /* Allow it to take up available space */
+}
+
+.message-metadata {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 100px;
+}
+
+.message-date {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.message-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.reply-button,
+.delete-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reply-button {
+  background-color: rgba(118, 255, 156, 0.2);
+  color: #000;
+  border: 1px solid #76ff9c;
+}
+
+.reply-button:hover {
+  background-color: rgba(118, 255, 156, 0.3);
+}
+
+.delete-button {
+  background-color: rgba(255, 118, 118, 0.1);
+  color: #e53935;
+  border: 1px solid rgba(229, 57, 53, 0.3);
+}
+
+.delete-button:hover {
+  background-color: rgba(255, 118, 118, 0.2);
+}
+
+/* Message Detail View */
+.message-detail {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.message-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.message-detail-subject {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.message-detail-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.message-detail-from {
+  font-weight: 500;
+}
+
+.message-detail-content {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.no-messages {
+  text-align: center;
+  padding: 40px 0;
+  color: #888;
+  font-size: 1.1rem;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading and Error States */
+.loading-container,
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: 100%;
+}
+
+.loading {
+  font-size: 1.1rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+  color: #e53935;
+  background-color: rgba(229, 57, 53, 0.1);
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #e53935;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,80 @@
+/* Simple toast styles */
+.Toastify__toast-container {
+  width: 320px;
+  padding: 0;
+}
+
+/* Individual toast */
+.Toastify__toast {
+  min-height: 50px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Toast body */
+.Toastify__toast-body {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Hide toast icons */
+.Toastify__toast-icon {
+  display: none;
+}
+
+/* Close button */
+.Toastify__close-button {
+  color: #777;
+  opacity: 0.7;
+  background: transparent;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+  color: #333;
+}
+
+/* Progress bar */
+.Toastify__progress-bar {
+  height: 3px;
+  bottom: 0;
+}
+
+/* Simple animations */
+@keyframes slideInRight {
+  from {
+    transform: translate3d(110%, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(110%, 0, 0);
+    opacity: 0;
+  }
+}
+
+.Toastify__slide-enter--top-right {
+  animation: slideInRight 0.3s forwards;
+}
+
+.Toastify__slide-exit--top-right {
+  animation: slideOutRight 0.3s forwards;
+}

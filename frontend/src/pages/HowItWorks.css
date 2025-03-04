@@ -1,0 +1,175 @@
+/* How It Works Container */
+.how-it-works-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.how-it-works-section {
+  margin-bottom: 40px;
+}
+
+.how-it-works-section h2 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(118, 255, 156, 0.3);
+}
+
+.how-it-works-section p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Steps Container */
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.step-card {
+  flex: 1;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 25px;
+  position: relative;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #76ff9c;
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 40px;
+  height: 40px;
+  background-color: #76ff9c;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 3px 8px rgba(118, 255, 156, 0.4);
+}
+
+.step-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.step-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 2rem;
+  opacity: 0.2;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.benefit-card {
+  flex: 1;
+  min-width: 300px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.benefit-card ul {
+  padding-left: 20px;
+}
+
+.benefit-card li {
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* FAQ Section */
+.faq-container {
+  margin-top: 20px;
+}
+
+.faq-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 3px solid #76ff9c;
+}
+
+.faq-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: column;
+  }
+  
+  .step-card {
+    width: 100%;
+  }
+  
+  .benefits-grid {
+    flex-direction: column;
+  }
+  
+  .benefit-card {
+    width: 100%;
+  }
+}
