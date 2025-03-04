@@ -64,10 +64,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .nav-item {
-  margin-left: 16px;
+  margin-left: 20px;
 }
 
 .nav-link {
@@ -80,6 +81,23 @@
 
 .nav-link:hover {
   color: #4caf50;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  margin-left: 8px;
+}
+
+.twitter-icon {
+  fill: #555;
+  transition: fill 0.3s ease;
+}
+
+.social-link:hover .twitter-icon {
+  fill: #4caf50;
 }
 
 .auth-buttons {
