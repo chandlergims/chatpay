@@ -10,7 +10,7 @@ const HowItWorks: React.FC = () => {
         <section className="how-it-works-section">
           <h2>Messaging & Payment System</h2>
           <p>
-            Chatr uses a unique messaging system that incentivizes quality responses and 
+            Chatrr uses a unique messaging system that incentivizes quality responses and
             ensures fair compensation for users' time and expertise.
           </p>
           
