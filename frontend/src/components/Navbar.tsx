@@ -56,7 +56,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          Chatrr
+          <img src="/logo.png" alt="Chatrr Logo" className="navbar-logo-img" />
         </Link>
         <ul className="nav-menu">
           <li className="nav-item">

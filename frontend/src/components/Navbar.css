@@ -37,6 +37,12 @@
   position: relative;
 }
 
+.navbar-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .navbar-logo::after {
   content: '';
   position: absolute;
