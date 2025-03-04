@@ -12,3 +12,5 @@ cmd = "NODE_ENV=production npm start"
 
 [env]
 NODE_ENV = "production"
+JWT_SECRET = "chatr_jwt_secret_key_2025"
+MONGO_URI = "mongodb+srv://felp:0Fd51ySQimSf7fPt@cluster0.hxfim.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
