@@ -56,7 +56,6 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <span className="navbar-logo-text">QF</span>
           <img src="/logo.png" alt="QueryFi Logo" className="navbar-logo-img" />
         </Link>
         <ul className="nav-menu">
@@ -76,7 +75,7 @@ const Navbar = () => {
           )}
           <li className="nav-item">
             <a 
-              href="https://x.com/chatrrdotfun" 
+              href="https://x.com/QueryFIApp" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="nav-link social-link"

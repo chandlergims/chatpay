@@ -39,19 +39,10 @@
   position: relative;
 }
 
-.navbar-logo-text {
-  font-family: 'Archivo', sans-serif; /* Fallback for Brick Sans */
-  font-weight: 700;
-  font-size: 22px;
-  color: #000;
-  letter-spacing: 0px;
-}
-
 .navbar-logo-img {
   height: 40px;
   width: auto;
   object-fit: contain;
-  display: none; /* Hide the image logo */
 }
 
 .navbar-logo::after {
