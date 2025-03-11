@@ -10,7 +10,7 @@ const HowItWorks: React.FC = () => {
         <section className="how-it-works-section">
           <h2>Messaging & Payment System</h2>
           <p>
-            QueryFi uses a unique messaging system that incentivizes quality responses and
+            AskFi uses a unique messaging system that incentivizes quality responses and
             ensures fair compensation for users' time and expertise.
           </p>
           

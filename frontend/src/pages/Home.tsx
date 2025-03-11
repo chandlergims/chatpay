@@ -205,7 +205,7 @@ const Home: React.FC = () => {
     <div className="page-container">
       <div className="white-container">
         <div className="profiles-header">
-          <h1>QueryFi</h1>
+          <h1>AskFi</h1>
         </div>
 
         <div className="search-container">
@@ -315,7 +315,7 @@ const Home: React.FC = () => {
       <Modal
         isOpen={isCreateProfileModalOpen}
         onClose={() => setIsCreateProfileModalOpen(false)}
-        title="Create QueryFi Profile"
+        title="Create AskFi Profile"
       >
         <CreateProfileForm
           onSubmit={handleProfileCreated}
