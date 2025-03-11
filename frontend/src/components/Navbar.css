@@ -26,23 +26,23 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/biurkcsans');
 
 .navbar-logo {
   color: #222;
-  font-size: 1.4rem;
-  font-weight: bold;
   text-decoration: none;
   display: flex;
   align-items: center;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.5px;
   position: relative;
 }
 
-.navbar-logo-img {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
+.navbar-logo-text {
+  font-family: 'BiurkCSans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #222;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.5px;
 }
 
 .navbar-logo::after {
@@ -74,6 +74,7 @@
 }
 
 .nav-link {
+  font-family: 'BiurkCSans', sans-serif;
   color: #555;
   text-decoration: none;
   padding: 6px 12px;
